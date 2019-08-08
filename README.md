@@ -75,8 +75,9 @@ mFile = SelectImageUtils.camera(context,SELECT_CAMERA);
 ~~~
 
 * 清声明provider
-~~~~ JAVA
-    //在清单文件中添加  包名 改成自己的包名 
+
+在清单文件中添加  包名 改成自己的包名 
+~~~~ XML
     <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="包名.fileprovider"
@@ -94,7 +95,7 @@ mFile = SelectImageUtils.camera(context,SELECT_CAMERA);
 
     provider_paths.xml 中的内容
     
-~~~ JAVA
+~~~ XML
 
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
