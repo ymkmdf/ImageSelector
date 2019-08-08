@@ -1,14 +1,14 @@
 
 ## Android 图片选择器
 
-* V1.0.0 图片选择器 可以选择图片文件夹
+* v1.0.0 图片选择器 可以选择图片文件夹
     
     
 ![图片](https://github.com/ymkmdf/ImageSelector/blob/master/391565232273_.pic.jpg?raw=true '图片选择器')
 
 ![图片](https://github.com/ymkmdf/ImageSelector/blob/master/401565232274_.pic.jpg?raw=true '图片选择器')
 
-
+**图片选择器使用方法**
 * 添加依赖
 ~~~ JAVA
     allprojects {
@@ -35,7 +35,7 @@
 [Android 6.0 需要动态获取权限](https://github.com/ymkmdf/SimplePermissions/blob/master/README.md)
 
 
-**图片选择使用方法**
+
 * 调用图片选择器
 ~~~ JAVA
 //调用图片选择器 参数：Context  ,是否展示相机按钮  选择图片的数量, 是否只选择一张图片  requestCode
@@ -74,5 +74,33 @@ mFile = SelectImageUtils.camera(context,SELECT_CAMERA);
     }
 ~~~
 
+* 清声明provider
+~~~~ JAVA
+    //在清单文件中添加  包名 改成自己的包名 
+    <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="包名.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+~~~~
 
+* 添加xml 文件
+
+    在res目录中添加xml文件夹，在xml文件夹中添加provider_paths.xml文件
+
+    provider_paths.xml 中的内容
+    
+~~~ JAVA
+
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="external_files" path=""/>
+</PreferenceScreen>
+~~~
+
+(*￣︶￣) (*￣︶￣)
 
