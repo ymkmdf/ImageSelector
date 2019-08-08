@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="MIS_NO_ACTIONBAR" parent="Theme.AppCompat.Light.NoActionBar"/>
+</resources>
